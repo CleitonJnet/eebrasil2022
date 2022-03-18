@@ -160,6 +160,28 @@
                     @endfor
                 </ul>
 
+                <div class="max-w-7xl mx-auto px-2">
+                    <div class="bg-gray-700 overflow-hidden shadow-xl sm:rounded-md p-2 mt-2 flex justify-end {{ $fsc = 0 }}">
+
+                        <div  x-show="openTab === 0">
+                            <a target="__blank" style="font-size: .85rem" class="px-2 transition font-bold text-indigo-100 hover:text-indigo-300"
+                            href="{{ route('office.trainings.display_report_resume', $training->id ) }}">
+                            MONITOR <img src="{{ asset('img/fullscreen-svgrepo-com.svg') }}" class="w-5 inline-block ml-2" alt="...{{ $fsc++ }}">
+                            </a>
+                        </div>
+
+                        @foreach ($ojts as $ojt)
+                            <div  x-show="openTab === {{ $fsc }}">
+                                <a target="_blank" style="font-size: .85rem" class="px-2 transition font-bold text-indigo-100 hover:text-indigo-300"
+                                href="{{ route('office.trainings.display_report', ['training'=>$training->id , 'date' => $ojt->date] ) }}">
+                                    MONITOR <img src="{{ asset('img/fullscreen-svgrepo-com.svg') }}" class="w-5 inline-block ml-2" alt="...{{ $fsc++ }}">
+                                </a>
+                            </div>
+                        @endforeach
+
+                    </div>
+                </div>
+
                 <div class="px-2 pb-2" {{ $item = 1 }} {{ $it = 1 }}>
 
                     <div x-show="openTab === 0" class="shadow-md overflow-hidden border-b border-gray-500 sm:rounded-lg mt-2">

@@ -64,14 +64,4 @@ input[type=number] {
     background-color: #9c9c9c;
   }
 
-
-/* MAPA DO BRASIL */
-.state:hover {
-    fill: rgb(180, 0, 0);
-    stroke: rgb(80, 0, 0);
-    stroke-width: 3;
-    transition: ease-in-out all
-}
-
-
 .bg-image {background-size: 250px; background-position:bottom}

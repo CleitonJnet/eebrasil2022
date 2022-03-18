@@ -86,6 +86,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
             Route::get('{training}/edit',App\Http\Livewire\Office\Training\Edit::class)->name('edit');
             Route::get('{training}/view',App\Http\Livewire\Office\Training\View::class)->name('view');
             Route::get('{training}/report',App\Http\Livewire\Office\Training\Report::class)->name('report');
+            Route::get('{training}/display-report/{date}',App\Http\Livewire\Office\Training\DisplayReport::class)->name('display_report');
+            Route::get('{training}/display-report-resume',App\Http\Livewire\Office\Training\DisplayReportResume::class)->name('display_report_resume');
         });
         Route::prefix('wherearewe')->name('wherearewe.')->group(function () {
             Route::get('index',App\Http\Livewire\Office\WhereAreWe\Index::class)->name('index');

@@ -6,7 +6,7 @@ use App\Models\Training;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
-class Report extends Component
+class DisplayReportResume extends Component
 {
     public Training $training;
 
@@ -21,6 +21,6 @@ class Report extends Component
         $this->ojtsDays = $this->ojts->count('date');
         $this->widthp = 100/($this->ojtsDays+1);
 
-        return view('livewire.office.training.report')->layout('layouts.app_office');
+        return view('livewire.office.training.display-report-resume');
     }
 }
