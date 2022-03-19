@@ -15,8 +15,8 @@ class CreateScheduleDefaultsTable extends Migration
     {
         Schema::create('schedule_defaults', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('unity_id')->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('tool_id')->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignId('unity_id')->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->date('date');
             $table->time('start');
             $table->time('end');

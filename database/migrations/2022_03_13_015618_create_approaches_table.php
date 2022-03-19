@@ -16,7 +16,7 @@ class CreateApproachesTable extends Migration
         Schema::create('approaches', function (Blueprint $table) {
             $table->id();
             $table->foreignId('ojt_id')->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->string('name',100);
+            $table->string('name',100)->nullable();
             $table->string('gender',1)->nullable();
             $table->date('birth')->nullable();
             $table->string('email',100)->nullable();

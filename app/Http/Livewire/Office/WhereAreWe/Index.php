@@ -20,6 +20,22 @@ class Index extends Component
     public $church;
     public $totPerChurch;
 
+    public function verifyState($id)
+    {
+        $this->consult       = Zone::find($id);
+        $this->totPerChurch  = Church::where('state',$this->consult->initial)->count();
+        $this->population    = $this->consult->population;
+        $this->protestantism = $this->consult->protestantism;
+        $this->catholicism   = $this->consult->catholicism;
+        $this->atheism       = $this->consult->atheism;
+    }
+
+    public function render()
+    {
+        return view('livewire.office.where-are-we.index')->layout('layouts.app_office');
+    }
+
+
     /*
     public function insertUF()
     {
@@ -53,20 +69,4 @@ class Index extends Component
         $this->redirectRoute('office.users.index');
 
     } */
-
-
-    public function verifyState($id)
-    {
-        $this->consult       = Zone::find($id);
-        $this->totPerChurch  = Church::where('state',$this->consult->initial)->count();
-        $this->population    = $this->consult->population;
-        $this->protestantism = $this->consult->protestantism;
-        $this->catholicism   = $this->consult->catholicism;
-        $this->atheism       = $this->consult->atheism;
-    }
-
-    public function render()
-    {
-        return view('livewire.office.where-are-we.index')->layout('layouts.app_office');
-    }
 }

@@ -15,7 +15,9 @@ class CreateOjtsTable extends Migration
     {
         Schema::create('ojts', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('mentor_id')->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('training_id')->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->string('host',100);
             $table->date('date');
             $table->time('time');
             $table->string('email',100)->nullable();

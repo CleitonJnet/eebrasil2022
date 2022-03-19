@@ -9,31 +9,22 @@ class Tool extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name','description','knowhow','category_id'];
+    protected $fillable = [ 'category_id', 'name', 'description', 'knowhow' ];
 
+    // ///////// BELONGS TO
     public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
+    { return $this->belongsTo(Category::class); }
+
+    // ///////// HAS MANY
+    public function scheduleDefault()
+    { return $this->hasMany(ScheduleDefault::class); }
 
     public function sections()
-    {
-        return $this->hasMany(Section::class);
-    }
+    { return $this->hasMany(Section::class); }
 
     public function training()
-    {
-        return $this->hasMany(Training::class);
-    }
+    { return $this->hasMany(Training::class); }
 
     public function unities()
-    {
-        return $this->hasMany(Unity::class);
-    }
-
-    public function scheduleDefault()
-    {
-        return $this->hasMany(ScheduleDefault::class);
-    }
-
+    { return $this->hasMany(Unity::class); }
 }

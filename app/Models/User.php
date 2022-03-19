@@ -23,85 +23,50 @@ class User extends Authenticatable
      *
      * @var string[]
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'phone',
-        'street',
-        'number',
-        'complement',
-        'neighborhood',
-        'city',
-        'state',
-        'zipcode',
-        'comment',
-        'church_id',
-    ];
+    protected $fillable = [  'church_id', 'name', 'email', 'password', 'phone', 'street', 'number', 'complement', 'neighborhood', 'city', 'state', 'zipcode', 'comment' ];
 
     /**
      * The attributes that should be hidden for serialization.
      *
      * @var array
      */
-    protected $hidden = [
-        'password',
-        'remember_token',
-        'two_factor_recovery_codes',
-        'two_factor_secret',
-    ];
+    protected $hidden = [ 'password', 'remember_token', 'two_factor_recovery_codes', 'two_factor_secret', ];
 
     /**
      * The attributes that should be cast.
      *
      * @var array
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    protected $casts = [ 'email_verified_at' => 'datetime', ];
 
     /**
      * The accessors to append to the model's array form.
      *
      * @var array
      */
-    protected $appends = [
-        'profile_photo_url',
-    ];
+    protected $appends = [ 'profile_photo_url', ];
 
+    // ///////// BELONGS TO
     public function church()
-    {
-        return $this->belongsTo(Church::class);
-    }
-
-    public function roles()
-    {
-        return $this->belongsToMany(Role::class);
-    }
+    { return $this->belongsTo(Church::class); }
 
     public function fieldworks()
-    {
-        return $this->belongsToMany(Church::class, 'church_user');
-    }
+    { return $this->belongsToMany(Church::class, 'church_user'); }
+
+    public function roles()
+    { return $this->belongsToMany(Role::class); }
+
+    // ///////// HAS MANY
+    public function partners()
+    { return $this->hasMany(Partner::class); }
 
     public function partnership()
-    {
-        return $this->hasMany(PartnerManagement::class);
-    }
-
-    public function partners()
-    {
-        return $this->hasMany(Partner::class);
-    }
-
-    public function trainings()
-    {
-        return $this->hasMany(Training::class);
-    }
+    { return $this->hasMany(PartnerManagement::class); }
 
     public function student()
-    {
-        return $this->hasMany(Student::class);
-    }
+    { return $this->hasMany(Student::class); }
+
+    public function trainings()
+    { return $this->hasMany(Training::class); }
 
 }

@@ -111,7 +111,7 @@ class UserSeeder extends Seeder
             'zipcode' => '24365170',
             'comment' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. A vitae maiores numquam cum animi, doloremque eum esse! Provident numquam quae natus velit eaque, dolorem ullam blanditiis assumenda labore quaerat! Ipsa!',
         ]);
-        \App\Models\User::factory(5000)->create();
+        \App\Models\User::factory(100)->create();
 
         foreach(Church::get() as $ch){
             DB::table('church_user')->insert([ 'church_id' => $ch->id, 'user_id' => 1, ]);

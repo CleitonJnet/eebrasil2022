@@ -9,28 +9,9 @@ class Partner extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name',
-        'phone',
-        'gender',
-        'email',
-        'street',
-        'number',
-        'complement',
-        'neighborhood',
-        'city',
-        'state',
-        'zipcode',
-        'birth',
-        'status',
-        'period',
-        'value',
-        'since',
-        'comment',
-    ];
+    protected $fillable = [ 'name', 'phone', 'gender', 'email', 'street', 'number', 'complement', 'neighborhood', 'city', 'state', 'zipcode', 'birth', 'status', 'period', 'value', 'since', 'comment', ];
 
+    // ///////// BELONGS TO
     public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+    { return $this->belongsTo(User::class); }
 }

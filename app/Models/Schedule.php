@@ -11,19 +11,14 @@ class Schedule extends Model
 
     protected $fillable = ['training_id','unity_id','tool_id','date','start','end'];
 
-    public function unity()
-    {
-        return $this->belongsTo(Unity::class);
-    }
-
+    // ///////// BELONGS TO
     public function tool()
-    {
-        return $this->belongsTo(Tool::class);
-    }
+    { return $this->belongsTo(Tool::class); }
 
     public function training()
-    {
-        return $this->belongsTo(Training::class);
-    }
+    { return $this->belongsTo(Training::class); }
+
+    public function unity()
+    { return $this->belongsTo(Unity::class); }
 
 }

@@ -61,5 +61,4 @@
           </div>
         </x-slot>
     </x-section>
-    @include('components.modal-delete-show')
 </div>

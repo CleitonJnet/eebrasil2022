@@ -11,9 +11,8 @@ class Approach extends Model
 
     protected $fillable = ['ojt_id','name'];
 
+    // ///////// BELONGS TO
     public function ojs()
-    {
-        return $this->belongsTo(Ojt::class);
-    }
+    { return $this->belongsTo(Ojt::class); }
 
 }

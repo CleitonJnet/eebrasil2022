@@ -11,8 +11,7 @@ class Category extends Model
 
     protected $fillable = ['name','description','knowhow'];
 
+    // ///////// HAS MANY
     public function tools()
-    {
-        return $this->hasMany(Tool::class);
-    }
+    { return $this->hasMany(Tool::class); }
 }

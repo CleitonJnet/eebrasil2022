@@ -11,8 +11,7 @@ class PartnerManagement extends Model
 
     protected $fillable = ['rent', 'ministery', 'medical', 'admin', 'other', 'offer', 'monthto','user_id'];
 
+    // ///////// BELONGS TO
     public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+    { return $this->belongsTo(User::class); }
 }

@@ -65,7 +65,7 @@
 
                         <div class="px-4 py-3 bg-gray-600 text-right sm:px-6">
                             <x-button-submit />
-                            <x-button-index href="{{ route('office.churches.index') }}" />
+                            <x-button-index href="{{ route('office.trainings.index') }}" />
                         </div>
                     </form>
                 </div>

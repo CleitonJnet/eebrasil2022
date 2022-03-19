@@ -42,7 +42,7 @@ class UserFactory extends Factory
             'state' => $this->faker->randomElement(['SP', 'RJ','MG','AM','RS','PE']),
             'zipcode' => $this->faker->numberBetween(11111111,99999999),
             'comment' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. A vitae maiores numquam cum animi, doloremque eum esse! Provident numquam quae natus velit eaque, dolorem ullam blanditiis assumenda labore quaerat! Ipsa!',
-            'church_id' => $this->faker->numberBetween(1,100)
+            'church_id' => $this->faker->numberBetween(1,10)
         ];
     }
 

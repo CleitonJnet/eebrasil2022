@@ -23,11 +23,11 @@
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('office.trainings.index') }}"
                         :active="
-                        request()->routeIs('office.trainings.*') ||
                         request()->routeIs('office.categories.*') ||
-                        request()->routeIs('office.tools.*') ||
-                        request()->routeIs('office.schedules.*') ||
                         request()->routeIs('office.schedule-defaults.*') ||
+                        request()->routeIs('office.schedules.*') ||
+                        request()->routeIs('office.trainings.*') ||
+                        request()->routeIs('office.tools.*') ||
                         request()->routeIs('office.unities.*')"
                         >
                         {{ __('Trainings') }}

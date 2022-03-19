@@ -21,6 +21,17 @@
                     <x-jet-nav-link href="{{ route('fieldworker.users.index') }}" :active="request()->routeIs('fieldworker.users.*')">
                         {{ __('Users') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('fieldworker.trainings.index') }}"
+                        :active="
+                        request()->routeIs('fieldworker.categories.*') ||
+                        request()->routeIs('fieldworker.ojts.*') ||
+                        request()->routeIs('fieldworker.schedule-defaults.*') ||
+                        request()->routeIs('fieldworker.schedules.*') ||
+                        request()->routeIs('fieldworker.trainings.*') ||
+                        request()->routeIs('fieldworker.unities.*')
+                        ">
+                        {{ __('Trainings') }}
+                    </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('fieldworker.partners.index') }}" :active="request()->routeIs('fieldworker.partners.*')">
                         {{ __('Partnership') }}
                     </x-jet-nav-link>

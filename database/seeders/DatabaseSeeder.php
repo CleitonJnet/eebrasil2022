@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\ScheduleDefault;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -23,5 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TrainingSeeder::class);
         $this->call(StudentSeeder::class);
         $this->call(ScheduleDefaultSeeder::class);
+        $this->call(MentorSeeder::class);
+        $this->call(OjtSeeder::class);
     }
 }

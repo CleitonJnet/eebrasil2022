@@ -9,16 +9,13 @@ class ScheduleDefault extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['unity_id','tool_id','date','start','end'];
+    protected $fillable = ['tool_id','unity_id','date','start','end'];
 
+    // ///////// BELONGS TO
     public function unity()
-    {
-        return $this->belongsTo(Unity::class);
-    }
+    { return $this->belongsTo(Unity::class); }
 
     public function tool()
-    {
-        return $this->belongsTo(Tool::class);
-    }
+    { return $this->belongsTo(Tool::class); }
 
 }

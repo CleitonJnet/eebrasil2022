@@ -11,16 +11,13 @@ class Unity extends Model
 
     protected $fillable = ['tool_id','order','duration','name','description','knowhow','devotional'];
 
-    public function tool()
-    {
-        return $this->belongsTo(Tool::class);
-    }
+    // ///////// BELONGS TO
     public function scheduleDefault()
-    {
-        return $this->belongsTo(ScheduleDefault::class);
-    }
+    { return $this->belongsTo(ScheduleDefault::class); }
+
     public function schedule()
-    {
-        return $this->belongsTo(Schedule::class);
-    }
+    { return $this->belongsTo(Schedule::class); }
+
+    public function tool()
+    { return $this->belongsTo(Tool::class); }
 }
