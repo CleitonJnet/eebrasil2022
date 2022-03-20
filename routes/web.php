@@ -22,18 +22,26 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
             Route::get('{church}/view',App\Http\Livewire\FieldWorker\Church\View::class)->name('view');
             Route::get('{church}/fieldworker',App\Http\Livewire\FieldWorker\Church\FieldWorker::class)->name('fieldworker');
         });
-        Route::prefix('ojts')->name('ojts.')->group(function () {
-            Route::get('create',App\Http\Livewire\FieldWorker\Ojt\Create::class)->name('create');
-            Route::get('{training}/index',App\Http\Livewire\FieldWorker\Ojt\Index::class)->name('index');
-            Route::get('{ojt}/edit',App\Http\Livewire\FieldWorker\Ojt\Edit::class)->name('edit');
-            Route::get('{ojt}/view',App\Http\Livewire\FieldWorker\Ojt\View::class)->name('view');
-        });
         Route::prefix('partners')->name('partners.')->group(function () {
             Route::get('create',App\Http\Livewire\FieldWorker\Partner\Create::class)->name('create');
             Route::get('index',App\Http\Livewire\FieldWorker\Partner\Index::class)->name('index');
             Route::get('{partner}/edit',App\Http\Livewire\FieldWorker\Partner\Edit::class)->name('edit');
             Route::get('{partner}/view',App\Http\Livewire\FieldWorker\Partner\View::class)->name('view');
             Route::get('management/{partner?}',App\Http\Livewire\FieldWorker\Partner\Management::class)->name('management');
+        });
+        Route::prefix('posts')->name('posts.')->group(function () {
+            Route::post('store',[App\Http\Controllers\Fieldworker\PostCreate::class,'store'])->name('store');
+            Route::post('update/{id}',[App\Http\Controllers\Fieldworker\PostUpdate::class,'update'])->name('update');
+            Route::get('create',App\Http\Livewire\FieldWorker\Post\Create::class)->name('create');
+            Route::get('index',App\Http\Livewire\FieldWorker\Post\Index::class)->name('index');
+            Route::get('{post}/edit',App\Http\Livewire\FieldWorker\Post\Edit::class)->name('edit');
+            Route::get('{post}/view',App\Http\Livewire\FieldWorker\Post\View::class)->name('view');
+        });
+        Route::prefix('ojts')->name('ojts.')->group(function () {
+            Route::get('create',App\Http\Livewire\FieldWorker\Ojt\Create::class)->name('create');
+            Route::get('{training}/index',App\Http\Livewire\FieldWorker\Ojt\Index::class)->name('index');
+            Route::get('{ojt}/edit',App\Http\Livewire\FieldWorker\Ojt\Edit::class)->name('edit');
+            Route::get('{ojt}/view',App\Http\Livewire\FieldWorker\Ojt\View::class)->name('view');
         });
         Route::prefix('schedules')->name('schedules.')->group(function () {
             Route::get('{training}/create',App\Http\Livewire\FieldWorker\Schedule\Create::class)->name('create');

@@ -38,6 +38,9 @@
                     <x-jet-nav-link href="{{ route('fieldworker.wherearewe.index') }}" :active="request()->routeIs('fieldworker.wherearewe.*')">
                         {{ __('Where Are We') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('fieldworker.posts.index',Auth()->user()->id) }}" :active="request()->routeIs('fieldworker.posts.*')">
+                        {{ __('Posts') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
 

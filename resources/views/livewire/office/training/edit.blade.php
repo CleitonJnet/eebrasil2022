@@ -1,5 +1,5 @@
 <div  class="pb-12">
-    <x-slot name="header"><h2 class="text-xl text-gray-800 leading-tight">{{ __('New Event') }}</h2></x-slot>
+    <x-slot name="header"><h2 class="text-xl text-gray-800 leading-tight">{{ __('Edit Event') }}</h2></x-slot>
 
     <x-section>
         <x-slot name="section_body">
