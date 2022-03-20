@@ -1,4 +1,4 @@
-<div class="pb-12">
+<div>
     <x-section>
         <x-slot name="section_title">
         </x-slot>

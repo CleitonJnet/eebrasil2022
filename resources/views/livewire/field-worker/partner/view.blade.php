@@ -1,20 +1,18 @@
-<div  class="pb-12">
+<div>
     <x-slot name="header">
         <h2 class="text-xl text-gray-800 leading-tight">
             {{ __('Partner') }}
         </h2>
     </x-slot>
 
-    <x-navigation>
-        <x-slot name="navigation">
-            <x-nav-link href="{{ route('fieldworker.partners.index') }}">
-                {{ __('PARTNERS LIST') }}
-            </x-nav-link>
-            <x-nav-link href="{{ route('fieldworker.partners.edit',$partner->id) }}">
-                {{ __('EDIT PARTNER') }}
-            </x-nav-link>
-        </x-slot>
-    </x-navigation>
+    <x-slot name="navigation">
+        <x-nav-link href="{{ route('fieldworker.partners.index') }}">
+            {{ __('PARTNERS LIST') }}
+        </x-nav-link>
+        <x-nav-link href="{{ route('fieldworker.partners.edit',$partner->id) }}">
+            {{ __('EDIT PARTNER') }}
+        </x-nav-link>
+    </x-slot>
 
     <x-section>
         <x-slot name="section_body">

@@ -22,7 +22,7 @@
         <script defer src="https://unpkg.com/alpinejs@3.9.1/dist/cdn.min.js"></script>
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased min-h-screen bg-gray-600 bg-cover bg-center bg-fixed bg-no-repeat" style="background-image: url({{ asset('img/ee.svg') }});">
+    <body onmousemove="showNavbar()" class="font-sans antialiased min-h-screen bg-gray-600 bg-cover bg-center bg-fixed bg-no-repeat" style="background-image: url({{ asset('img/ee.svg') }});">
         <x-jet-banner />
 
         <x-navigations.fieldworker />
@@ -38,9 +38,19 @@
         </header>
         @endif
 
+        @if (isset($navigation))
+            <div id="navbar" class="mx-auto flex justify-center sm:px-6 lg:px-8 fixed left-0 w-full z-50" style="bottom: 3px;">
+                <div class="bg-gray-700 overflow-hidden shadow-xl sm:rounded-t-md p-3 flex justify-center" style="width: 75.7rem;">
+                    {{ $navigation }}
+                </div>
+            </div>
+        @endif
+
         <!-- Page Content -->
         <main data-aos="zoom-in-up" data-aos-duration="200">
-            {{ $slot }}
+            <div class="pb-14 pt-2">
+                {{ $slot }}
+            </div>
         </main>
 
         @stack('modals')
@@ -49,6 +59,19 @@
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>
           AOS.init();
+
+          const navbar = document.getElementById("navbar")
+
+          if (condition) {
+
+          } else {
+
+          }
+
+          function showNavbar()
+          {
+            console.log('ok')
+          }
         </script>
 </body>
 </html>

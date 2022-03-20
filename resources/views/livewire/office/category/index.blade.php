@@ -1,20 +1,18 @@
-<div  class="pb-12">
+<div>
     <x-slot name="header">
         <h2 class="text-xl text-gray-800 leading-tight">
             {{ __('Categories') }}
         </h2>
     </x-slot>
 
-    <x-navigation>
-        <x-slot name="navigation">
-            <x-nav-link href="{{ route('office.trainings.index') }}">
-                {{ __('CALENDAR') }}
-            </x-nav-link>
-            <x-nav-link href="{{ route('office.categories.create') }}">
-                {{ __('NEW CATEGORY') }}
-            </x-nav-link>
-        </x-slot>
-    </x-navigation>
+    <x-slot name="navigation">
+        <x-nav-link href="{{ route('office.trainings.index') }}">
+            {{ __('CALENDAR') }}
+        </x-nav-link>
+        <x-nav-link href="{{ route('office.categories.create') }}">
+            {{ __('NEW CATEGORY') }}
+        </x-nav-link>
+    </x-slot>
 
     <x-section>
         <x-slot name="section_body">

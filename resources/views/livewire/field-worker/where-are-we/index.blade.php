@@ -1,4 +1,4 @@
-<div  class="pb-12">
+<div>
     <x-slot name="header"><h2 class="text-xl text-gray-800 leading-tight">{{ __('Where Are We') }}</h2></x-slot>
     {{-- <a href="#" wire:click.prevent="insertUF">INSERT</a> --}}
 

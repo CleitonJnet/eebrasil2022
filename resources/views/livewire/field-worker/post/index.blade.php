@@ -1,17 +1,15 @@
-<div  class="pb-12">
+<div>
     <x-slot name="header">
         <h2 class="text-xl text-gray-800 leading-tight">
             {{ __('Posts') }}
         </h2>
     </x-slot>
 
-    <x-navigation>
-        <x-slot name="navigation">
-            <x-nav-link href="{{ route('fieldworker.posts.create') }}">
-                {{ __('NEW POST') }}
-            </x-nav-link>
-        </x-slot>
-    </x-navigation>
+    <x-slot name="navigation">
+        <x-nav-link href="{{ route('fieldworker.posts.create') }}">
+            {{ __('NEW POST') }}
+        </x-nav-link>
+    </x-slot>
 
     <x-section>
         <x-slot name="section_body">

@@ -1,26 +1,24 @@
-<div class="pb-12">
+<div>
     <x-slot name="header">
         <h2 class="text-xl text-gray-800 leading-tight">
             {{ __('Tool') }}
         </h2>
     </x-slot>
 
-    <x-navigation>
-        <x-slot name="navigation">
-            <x-nav-link href="{{ route('office.categories.view',$tool->category_id) }}">
-                {{ __('INDEX') }}
-            </x-nav-link>
-            <x-nav-link href="{{ route('office.tools.edit',$tool->id) }}">
-                {{ __('EDIT') }}
-            </x-nav-link>
-            <x-nav-link href="{{ route('office.unities.create',$tool->id) }}">
-                {{ __('NEW UNITY') }}
-            </x-nav-link>
-            <x-nav-link href="{{ route('office.schedule-defaults.index',$tool->id) }}">
-                {{ __('SCHEDULE DEFAULT') }}
-            </x-nav-link>
-        </x-slot>
-    </x-navigation>
+    <x-slot name="navigation">
+        <x-nav-link href="{{ route('office.categories.view',$tool->category_id) }}">
+            {{ __('INDEX') }}
+        </x-nav-link>
+        <x-nav-link href="{{ route('office.tools.edit',$tool->id) }}">
+            {{ __('EDIT') }}
+        </x-nav-link>
+        <x-nav-link href="{{ route('office.unities.create',$tool->id) }}">
+            {{ __('NEW UNITY') }}
+        </x-nav-link>
+        <x-nav-link href="{{ route('office.schedule-defaults.index',$tool->id) }}">
+            {{ __('SCHEDULE DEFAULT') }}
+        </x-nav-link>
+    </x-slot>
 
     <x-section>
         <x-slot name="section_title">
