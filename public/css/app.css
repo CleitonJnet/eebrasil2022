@@ -1903,6 +1903,10 @@ select {
 .bg-transparent {
   background-color: transparent;
 }
+.bg-slate-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+}
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
 }
@@ -2419,6 +2423,15 @@ select {
 }
 .opacity-25 {
   opacity: 0.25;
+}
+.opacity-95 {
+  opacity: 0.95;
+}
+.opacity-80 {
+  opacity: 0.8;
+}
+.opacity-90 {
+  opacity: 0.9;
 }
 .shadow-sm {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);

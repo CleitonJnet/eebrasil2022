@@ -21,6 +21,6 @@ class DisplayReportResume extends Component
         $this->ojtsDays = $this->ojts->count('date');
         $this->widthp = 100/($this->ojtsDays+1);
 
-        return view('livewire.field-worker.training.display-report-resume')->layout('layouts.app_fieldworker');
+        return view('livewire.field-worker.training.display-report-resume')->layout('layouts.guest');
     }
 }
