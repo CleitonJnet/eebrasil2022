@@ -14,6 +14,7 @@ class Edit extends Component
     public User $user;
 
     public $cod;
+    public $pastor;
     public $name;
     public $gender;
     public $birth;
@@ -33,6 +34,7 @@ class Edit extends Component
    public function mount()
     {
         $this->cod          = $this->user->id;
+        $this->pastor       = $this->user->pastor;
         $this->name         = $this->user->name;
         $this->gender       = $this->user->gender;
         $this->birth        = $this->user->birth;
@@ -76,6 +78,7 @@ class Edit extends Component
 
         $this->user->update([
             'name'         => $this->name,
+            'pastor'       => $this->pastor,
             'gender'       => $this->gender,
             'birth'        => $this->birth,
             'phone'        => Str::of($this->phone)->replaceMatches('/[^A-Za-z0-9]++/', ''),

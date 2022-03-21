@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->foreignId('church_id')->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->integer('pastor')->nullable();
+            $table->integer('pastor')->default(0);
             $table->string('name',100);
             $table->string('email',100)->unique();
             $table->string('password',100);

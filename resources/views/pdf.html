@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Post</title>
+    <style>
+        div.page {
+    page-break-after: always;
+    page-break-inside: auto;
+}
+
+    </style>
+</head>
+<body style="position: relative">
+    <div style="position: absolute; top: 0; left:0">
+
+        <img src="{{ asset('img/logo.png') }}" alt="" style="position: absolute; top:0; left:0">
+
+        <div style="margin-left: 0.5rem;color: #111827; position: absolute; top:1cm; left:0.2cm">
+
+            <div style="text-transform: uppercase;font-weight: 700;font-size: 18px; font-family:'Times New Roman', Times, serif; letter-spacing: 1.7px"><span class="text-sky-900">{{ __('Evangelismo ') }}</span><span>{{ __('Explosivo') }}</span></div>
+            <div style="text-transform: uppercase;font-size: 21px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; letter-spacing: .3px"><span>{{ __('Internacional ') }}</span><span class="text-sky-900">{{ __('no Brasil') }}</span></div>
+
+        </div>
+    </div>
+
+    <div style="clear: fix;"></div>
+
+    <div style="position: absolute;top: 10cm;">{!! $text !!}</div>
+</body>
+</html>

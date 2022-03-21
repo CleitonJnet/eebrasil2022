@@ -7,25 +7,25 @@
             <p class="mt-1 max-w-2xl text-sm text-gray-500">{{ __('Details')}}</p>
         </x-slot>
         <x-slot name="section_body">
-            <div class="md:grid md:grid-cols-3 md:gap-6">
+            <div class="md:grid md:grid-cols-4 md:gap-6">
                 <div class="md:col-span-1">
                   <div class="px-4 sm:px-0">
                     <h3 class="text-lg font-medium leading-6 text-gray-900 text-right">{{ __("Personal Information") }}</h3>
                     <p class="mt-1 text-sm text-gray-500 text-right">{{ __("Use your primary email, as in the future it may be used to receive subscriptions.") }}</p>
                   </div>
                 </div>
-                <div class="mt-5 md:mt-0 md:col-span-2">
+                <div class="mt-5 md:mt-0 md:col-span-3">
                   <div class="shadow overflow-hidden sm:rounded-md">
                     <form wire:submit.prevent="userStore">
 
                         <div class="px-4 py-5 bg-white sm:p-6 grid grid-cols-6 gap-4">
                             <div class="col-span-full">
-                                <label for="category_id" class="block text-sm font-medium text-gray-700">{{ __('Church') }}</label>
+                                <label for="church" class="block text-sm font-medium text-gray-700">{{ __('Church') }}</label>
                                 <div class="mt-1 relative rounded-md shadow-sm">
-                                    <select id="category_id" wire:model="category_id" name="category_id" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                    <select id="church" wire:model="church_id" name="church" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                         <option value="" hidden>{{ __('Select') }}</option>
-                                        @foreach (App\Models\Category::orderBy('name')->get() as $category)
-                                          <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @foreach (App\Models\Church::orderBy('name')->get() as $church)
+                                          <option value="{{ $church->id }}">{{ $church->name }}</option>
                                         @endforeach
                                     </select>
                                     <div class="absolute inset-y-0 right-0 flex items-center">
@@ -35,7 +35,16 @@
                                 @error('church_id') <span class="text-sm text-red-600">{{$message}}</span> @enderror
                             </div>
 
-                            <div class="col-span-6 sm:col-span-4">
+                            <div class="col-span-6 sm:col-span-1">
+                                <label for="pastor" class="block text-sm font-medium text-gray-700">{{ __('É pastor?') }}</label>
+                                <select id="pastor" wire:model="pastor" name="pastor" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                    <option value="0">{{ __('No') }}</option>
+                                    <option value="1">{{ __('Yes') }}</option>
+                                </select>
+                            @error('pastor') <span class="text-sm text-red-600">{{$message}}</span> @enderror
+                            </div>
+
+                            <div class="col-span-6 sm:col-span-3">
                                 <label for="name" class="block text-sm font-medium text-gray-700">{{ __('Name') }}</label>
                                 <input type="text" wire:model="name" name="name" id="name" placeholder="{{ __('Name') }}" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                 @error('name') <span class="text-sm text-red-600">{{$message}}</span> @enderror

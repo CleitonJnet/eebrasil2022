@@ -8,7 +8,7 @@
         @endif
 
         @if (isset($section_body))
-        <div class="border-t border-gray-200 bg-gray-200 overflow-hidden p-3">
+        <div class="border-t border-gray-200 bg-gray-200 overflow-hidden p-3" >
             {{ $section_body }}
         </div>
 

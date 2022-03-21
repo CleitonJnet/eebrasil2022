@@ -107,7 +107,7 @@
                 <dl>
                     <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                         <dt class="text-sm font-medium text-gray-500">{{ __('Pastors')}}:</dt>
-                        <dd class="mt-1 text-sm text-gray-500 sm:mt-0 sm:col-span-2">{{ $training->students->count() }}</dd>
+                        <dd class="mt-1 text-sm text-gray-500 sm:mt-0 sm:col-span-2">{{ $training->users()->where('pastor',1)->count() }}</dd>
                     </div>
                 </dl>
                 <dl>

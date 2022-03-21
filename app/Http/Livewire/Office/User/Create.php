@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire\Office\User;
 
-use App\Models\Church;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
@@ -11,6 +10,7 @@ use Illuminate\Support\Str;
 class Create extends Component
 {
     public $name;
+    public $pastor;
     public $gender;
     public $birth;
     public $phone;
@@ -47,6 +47,7 @@ class Create extends Component
 
         User::create([
             'name' => $this->name,
+            'pastor' => $this->pastor,
             'gender' => $this->gender,
             'birth' => $this->birth,
             'phone' => Str::of($this->phone)->replaceMatches('/[^A-Za-z0-9]++/', ''),

@@ -40,7 +40,7 @@
 
         @if (isset($navigation))
             <div id="navbar" class="mx-auto flex justify-center sm:px-6 lg:px-8 fixed left-0 w-full z-50" style="bottom: 3px;">
-                <div class="bg-gray-700 overflow-hidden shadow-xl sm:rounded-t-md p-3 flex justify-center" style="width: 75.7rem;">
+                <div class="bg-gray-800 overflow-hidden shadow-xl sm:rounded-t-md pt-1 flex justify-center" style="width: 75.7rem;">
                     {{ $navigation }}
                 </div>
             </div>

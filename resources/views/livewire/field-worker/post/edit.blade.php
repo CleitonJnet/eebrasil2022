@@ -50,6 +50,8 @@
             </div>
         </x-slot>
     </x-section>
+    @include('components.modal-delete-show')
+
     <script src="https://cdn.tiny.cloud/1/ty5pex8yxfo1pdaal5kfq0lm3698qv4aytcg1n2yilrlkmj1/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
     <script>tinymce.init({ selector: 'textarea' });</script>

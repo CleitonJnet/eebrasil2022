@@ -1,1 +1,1 @@
-<a style="font-size: .85rem" class="px-2 transition font-bold text-indigo-100 hover:text-indigo-300" {{ $attributes }}>{{ $slot }}</a>
+<a style="font-size: .85rem" class="px-4 py-2 transition font-bold bg-opacity-40 bg-slate-900 hover:bg-opacity-100 mx-1 rounded text-indigo-100 hover:text-indigo-100" {{ $attributes }}>{{ $slot }}</a>

@@ -2,15 +2,17 @@
 
 namespace App\Http\Livewire\FieldWorker\User;
 
-use App\Models\Church;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 use Livewire\Component;
+use Illuminate\Support\Str;
 
 class Create extends Component
 {
     public $name;
+    public $pastor;
+    public $gender;
+    public $birth;
     public $phone;
     public $email;
     public $street;
@@ -21,18 +23,22 @@ class Create extends Component
     public $state;
     public $zipcode;
     public $church_id;
+    public $comment;
 
     protected $rules = [
         'name' =>              'required',
-        'phone' =>             'required',
+        'birth' =>             'required',
+        'gender' =>            'required',
+        'phone' =>             'required|integer',
         'email' =>             'required',
         'street' =>            'required',
         'number' =>            'required',
-        'complement'   =>      'required',
+        'complement' =>        'required',
         'neighborhood' =>      'required',
         'city' =>              'required',
         'state' =>             'required',
-        'zipcode' =>           'required',
+        'comment' =>           'required',
+        'zipcode' =>           'required|digits:8|integer',
     ];
 
     public function userStore()
@@ -41,8 +47,11 @@ class Create extends Component
 
         User::create([
             'name' => $this->name,
+            'pastor' => $this->pastor,
+            'gender' => $this->gender,
+            'birth' => $this->birth,
             'phone' => Str::of($this->phone)->replaceMatches('/[^A-Za-z0-9]++/', ''),
-            'email' => strtolower($this->email),
+            'email' => $this->email,
             'street' => $this->street,
             'number' => $this->number,
             'complement' => $this->complement,
@@ -50,6 +59,7 @@ class Create extends Component
             'city' => $this->city,
             'state' => $this->state,
             'zipcode' => Str::of($this->zipcode)->replaceMatches('/[^A-Za-z0-9]++/', ''),
+            'comment' => $this->comment,
             'church_id' => $this->church_id,
             'password' => Hash::make('Master_01')
         ]);
@@ -60,7 +70,6 @@ class Create extends Component
 
     public function render()
     {
-        $churches = Church::orderBy('name')->get();
-        return view('livewire.field-worker.user.create',compact('churches'))->layout('layouts.app_fieldworker');
+        return view('livewire.field-worker.user.create')->layout('layouts.app_fieldworker');
     }
 }

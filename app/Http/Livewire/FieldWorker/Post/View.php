@@ -4,6 +4,7 @@ namespace App\Http\Livewire\FieldWorker\Post;
 
 use App\Models\Post;
 use Livewire\Component;
+use PDF;
 
 class View extends Component
 {
