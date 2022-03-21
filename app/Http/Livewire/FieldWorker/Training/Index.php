@@ -4,9 +4,12 @@ namespace App\Http\Livewire\FieldWorker\Training;
 
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
+    use WithPagination;
+
     public $search;
 
     public function search_clear()
@@ -20,6 +23,7 @@ class Index extends Component
         ->join('churches','.trainings.church_id','=','churches.id')
         ->join('tools','.tools.id','=','trainings.tool_id')
         ->join('users','.users.id','=','trainings.user_id')
+        ->where('user_id',Auth()->user()->id)
         ->where('date','>',now())
         ->where(function($ch){
             $ch

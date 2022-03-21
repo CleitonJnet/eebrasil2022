@@ -4,9 +4,12 @@ namespace App\Http\Livewire\Office\Training;
 
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
+    use WithPagination;
+
     public $search;
 
     public function search_clear()

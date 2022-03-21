@@ -45,6 +45,7 @@
                     <div class="px-4 py-3 bg-gray-600 text-right sm:px-6">
                         <x-button-submit />
                         <x-button-viewer href="{{ route('fieldworker.posts.view', $post->id) }}" />
+                        <a  target="_blanc" href="{{ route('makePDF',$post->id) }}" style="font-size: .85rem" class="inline-flex justify-center py-2 px-6 border border-transparent shadow-sm text-sm font-medium rounded-md bg-gray-700 text-white hover:bg-black focus:outline-black focus:ring-2 focus:ring-offset-2 focus:ring-black">{{ __('PDF') }}</a>
                     </div>
                 </form>
             </div>
